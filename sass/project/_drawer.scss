@@ -19,11 +19,11 @@ $drawer-padding: 16px;
 	transform: translateX(-300px);
 }
 
-.leDrawer.is-open {
+.leDrawer.isOpen {
 	transform: translateX(0px);
 }
 
-.leDrawer-openCloseBtn {
+.leDrawer-toggleBtn {
 	@include absolute(10px -28px n n);
 	@include size(28px 33px);
 	background-color: $color-ui-bg;
@@ -121,7 +121,7 @@ $drawer-padding: 16px;
 	height: 200px;
 }
 
-.leDrawer-removed.is-open {
+.leDrawer-removed.isOpen {
 	display: block;
 }
 
