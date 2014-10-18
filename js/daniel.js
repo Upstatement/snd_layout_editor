@@ -3,7 +3,7 @@ $(function() {
 
   var $vergeContent = $(".l-container");
 
-  $vergeContent.append($('<div class="the-farm" style="position:fixed;width:350px;top:0;left:0;background:white;border:red solid 1px;z-index:100;"></div>'));
+  $vergeContent.append($('<div class="the-farm" style="position:fixed;width:350px;max-height:100%;overflow:scroll;bottom:0;left:0;background:white;border:red solid 1px;z-index:100;"></div>'));
 
   $("a").removeAttr("href",$vergeContent);
 
@@ -60,8 +60,10 @@ $(function() {
     if (dragSrcEl != this) {
       // var foo = this.innerHTML;
       // console.log(foo);
+
       if ($(dragSrcEl).parent().hasClass("the-farm")) {
         this.innerHTML = dragSrcEl.innerHTML;
+        $(this).toggleClass("placeholder", $(dragSrcEl).hasClass("placeholder"));
         $(dragSrcEl).remove();
       } else {
         if (!$(this).hasClass("placeholder")) {
