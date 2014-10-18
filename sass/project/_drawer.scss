@@ -138,14 +138,24 @@ $drawer-width: 300px;
 //
 
 .placeholder {
+	width: 100%;
+	height: 100%;
+	position: relative;
 	font-family: $font-admin;
 	font-size: 1.4rem !important;
-	line-height: 400%;
-	background-color: #ededed;
+	background-color: #ededed !important;
 	text-align: center;
 	color: #aaa;
 	text-transform: uppercase;
 	box-shadow:	0 4px 0 rgba(255,255,255,.8) inset;
+	transition: background-color .2s ease;
+}
+
+.placeholder-txt {
+	@include absolute-center(n 22px);
+	left: 0;
+	right: 0;
+	line-height: 100%;
 }
 
 .m-hero__slot.placeholder {
@@ -154,6 +164,46 @@ $drawer-width: 300px;
 .m-entry-slot.placeholder {
 	min-height: 250px;
 }
+
+.m-entry-slot:not(.-entry-rock) {
+	transition: box-shadow 0s ease;
+	&:hover {
+		transition: box-shadow .3s ease;
+		box-shadow:	4px 4px 0 $green inset,
+						-4px -4px 0 $green inset;
+	}
+}
+
+.m-hero__slot {
+	transition: box-shadow 0s ease;
+	&:hover {
+		transition: box-shadow .3s ease;
+		box-shadow:	4px 4px 0 #000 inset,
+						-4px -4px 0 #000 inset;
+	}
+}
+
+.m-rock-read-this li {
+	&:hover {
+	box-shadow:	0 10px 0 #fff,
+					0 -10px 0 #fff,
+					10px 0 0 #fff,
+					-10px 0 0 #fff,
+					-10px -10px 0 #fff,
+					10px 10px 0 #fff,
+					0 14px 0 $green,
+					0 -14px 0 $green,
+					14px 0 0 $green,
+					-14px 0 0 $green,
+					-14px -14px 0 $green,
+					14px 14px 0 $green;
+	}
+}
+
+
+
+
+
 
 
 
