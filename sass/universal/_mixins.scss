@@ -1,0 +1,63 @@
+// Rem Calculator
+// ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~
+// FOR: Simply writing ems while allowing you to think in more straightforward px values
+// WHY: I don't think in ems. Do you?
+// NOTE: Ems calculated using the document base; override by providing optional second value
+// REF: http://bourbon.io/docs/#px-to-em
+// USE: em(12);
+
+@function rem($pxval, $base: 13) {
+  @if not unitless($pxval) {
+      $pxval: strip-units($pxval);
+  }
+  @if not unitless($base) {
+      $base: strip-units($base);
+  }
+  @return #{($pxval/$base)}rem;
+}
+
+
+// Rem Mixin
+// ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~
+// FOR:	Applying REMs to any CSS property with the appropriate fallback
+// WHY:	I don't think in rems and it's faster than writing the fallbacks
+//			out by hand every single time
+// NOTE:	Ems calculated using the document base; override by providing optional third value
+//	REF:	http://hugogiraudel.com/2013/03/18/ultimate-rem-mixin/
+// USE: 	@include rem(font-size, 12);
+
+@mixin rem($property, $values, $base: 13) {
+  $px : ();
+  $rem: ();
+
+  @each $value in $values {
+
+    @if $value == 0 or $value == auto {
+      $px : append($px , $value);
+      //$rem: append($rem, $value);
+    }
+
+    @else {
+      $unit: unit($value);
+      $val: strip-units($value);
+
+      @if $unit == "px" {
+        $px : append($px,  $value);
+        //$rem: append($rem, ($val / $base + rem));
+      }
+
+      @if $unit == "rem" {
+        $px : append($px,  ($val * $base + px));
+        //$rem: append($rem, $value);
+      }
+    }
+  }
+
+  @if $px == $rem {
+    #{$property}: $px;
+  } @else {
+    #{$property}: $px;
+    //#{$property}: $rem;
+  }
+} // rem
+
