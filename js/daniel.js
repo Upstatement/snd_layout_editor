@@ -3,7 +3,11 @@ $(function() {
 
   var $vergeContent = $(".l-container");
 
-  $vergeContent.append($('<div class="the-farm" style="position:fixed;width:350px;max-height:100%;overflow:scroll;bottom:0;left:0;background:white;border:red solid 1px;z-index:100;"></div>'));
+  $vergeContent.append($('<div class="the-farm" style=""></div>'));
+
+  $vergeContent.append($('<style>\
+    .the-farm {-webkit-transition:left 0.3s;transition:left 0.3s;position:fixed;width:350px;max-height:100%;overflow:scroll;bottom:0;left:-200px;background:white;border:red solid 1px;z-index:1000;opacity:.9;}\
+   .the-farm:hover {left: 0;}</style>'));
 
   $("a").removeAttr("href",$vergeContent);
 
@@ -27,6 +31,7 @@ $(function() {
     // this.style.opacity = '0.4';
 
     dragSrcEl = this;
+
 
     // e.dataTransfer.effectAllowed = 'move';
     // e.dataTransfer.setData('text/html', this.innerHTML);
@@ -57,23 +62,21 @@ $(function() {
     }
 
     // Don't do anything if dropping the same column we're dragging.
-    if (dragSrcEl != this) {
+    if (dragSrcEl != this && !$(dragSrcEl).hasClass("placeholder")) {
       // var foo = this.innerHTML;
       // console.log(foo);
-
+      if (!$(this).hasClass("placeholder")) {
+        $(".the-farm").append(makeDraggable($(this).clone()));
+      }
+      this.innerHTML = dragSrcEl.innerHTML;
+      $(this).toggleClass("placeholder", $(dragSrcEl).hasClass("placeholder"));
       if ($(dragSrcEl).parent().hasClass("the-farm")) {
-        this.innerHTML = dragSrcEl.innerHTML;
-        $(this).toggleClass("placeholder", $(dragSrcEl).hasClass("placeholder"));
         $(dragSrcEl).remove();
       } else {
-        if (!$(this).hasClass("placeholder")) {
-          $(".the-farm").append(makeDraggable($(this).clone()));
-        }
-        this.innerHTML = dragSrcEl.innerHTML;
-        $(this).toggleClass("placeholder", $(dragSrcEl).hasClass("placeholder"));
         dragSrcEl.innerHTML = entry_slot_placeholder;
         $(dragSrcEl).addClass("placeholder");
       }
+      $(".the-farm").scrollTop($(".the-farm").prop("scrollHeight"));
     }
 
     return false;
