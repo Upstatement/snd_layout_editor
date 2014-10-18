@@ -94,12 +94,16 @@ $drawer-width: 300px;
 	}
 }
 
-// Override Verge defaults
-.leDrawer-storyItem {
+@mixin hide-defaults {
 	// Hide all but the headline
 	div, p, img {
 		display: none;
 	}
+}
+
+// Override Verge defaults
+.leDrawer-storyItem {
+	@include hide-defaults;
 
 	h1, h2, h3, h4, h5, h6 {
 		@extend .leDrawer-storyH;
@@ -184,6 +188,8 @@ $drawer-width: 300px;
 }
 
 .m-rock-read-this li {
+	@include hide-defaults;
+
 	&:hover {
 	box-shadow:	0 10px 0 #fff,
 					0 -10px 0 #fff,
@@ -191,12 +197,16 @@ $drawer-width: 300px;
 					-10px 0 0 #fff,
 					-10px -10px 0 #fff,
 					10px 10px 0 #fff,
+					-10px 10px 0 #fff,
+					10px -10px 0 #fff,
 					0 14px 0 $green,
 					0 -14px 0 $green,
 					14px 0 0 $green,
 					-14px 0 0 $green,
 					-14px -14px 0 $green,
-					14px 14px 0 $green;
+					14px 14px 0 $green,
+					-14px 14px 0 $green,
+					14px -14px 0 $green;
 	}
 }
 
