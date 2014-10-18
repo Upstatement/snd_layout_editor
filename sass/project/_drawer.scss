@@ -1,0 +1,34 @@
+.leDrawer {
+	z-index: 5000001;
+	position: fixed;
+	top: 0;
+	bottom: 0;
+	left: 0;
+
+	width: 300px;
+	padding: 20px;
+	color: $color-ui-txt;
+	background-color: $color-ui-bg;
+
+	transition: translate 0.1s ease;
+	transform: translateX(-300px);
+}
+
+.leDrawer.is-open {
+	transform: translateX(0px);
+}
+
+.leDrawer-openCloseBtn {
+	@include absolute(20px 0 n n);
+
+	@include size(40px);
+	background-color: $color-ui-bg;
+	border-radius: 0 2px 2px 0;
+}
+
+.leDrawer-toolsSearch {
+	width: 100%;
+	border-radius: 2px;
+	background-color: rgba(255,255,255,1);
+	color: $color-ui-txt-dark;
+}
