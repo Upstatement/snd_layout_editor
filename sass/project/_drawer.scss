@@ -1,3 +1,5 @@
+$drawer-padding: 20px;
+
 .leDrawer {
 	z-index: 5000001;
 	position: fixed;
@@ -6,7 +8,7 @@
 	left: 0;
 
 	width: 300px;
-	padding: 20px;
+	padding: $drawer-padding;
 
 	font: $font-book 13px $sans;
 	color: $color-ui-txt;
@@ -43,6 +45,15 @@
 
 }
 
+.leDrawer-sectionH {
+	background-color: #000;
+	color: rgba(255,255,255,.85);
+	font: $font-bold 12px $sans;
+	text-transform: uppercase;
+	letter-spacing: 2px;
+	padding: 16px 16px 15px;
+	margin: 0;
+}
 
 //
 // Tools
@@ -54,12 +65,8 @@
 .leDrawer-toolsStoryTypes {
 	@include input-default;
 	width: 100%;
+	@extend .leDrawer-sectionH;
 	background-color: #000;
-	color: rgba(255,255,255,.85);
-	font: $font-bold 12px $sans;
-	text-transform: uppercase;
-	letter-spacing: 2px;
-	padding: 16px 16px 15px;
 }
 
 //
@@ -79,3 +86,23 @@
 .leDrawer-storyH {
 	font-weight: $font-semibold;
 }
+
+
+//
+// Recently Removed
+//
+
+.leDrawer-removed {
+	display: none;
+	@include absolute(n 0 0 0);
+	height: 200px;
+}
+
+.leDrawer-removed.is-open {
+	display: block;
+}
+
+
+
+
+
