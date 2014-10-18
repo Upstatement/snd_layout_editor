@@ -1,4 +1,12 @@
 $drawer-padding: 16px;
+$drawer-width: 300px;
+
+.l-container {
+	transition: all 0.2s ease;
+	.leDrawer-isOpen & {
+		transform: translateX(150px);
+	}
+}
 
 .leDrawer {
 	z-index: 5000001;
@@ -7,7 +15,7 @@ $drawer-padding: 16px;
 	bottom: 0;
 	left: 0;
 
-	width: 300px;
+	width: $drawer-width;
 	padding: $drawer-padding;
 
 	font: $font-book 13px $sans;
@@ -16,7 +24,7 @@ $drawer-padding: 16px;
 	box-shadow: 10px 0 0 rgba(0,0,0,.4);
 
 	transition: all 0.2s ease;
-	transform: translateX(-300px);
+	transform: translateX(-$drawer-width);
 }
 
 .leDrawer.isOpen {
@@ -95,14 +103,12 @@ $drawer-padding: 16px;
 
 	h1, h2, h3, h4, h5, h6 {
 		@extend .leDrawer-storyH;
-	}
-
-	h3 {
 		transition: color 0.2s ease-in;
 		&:hover {
 			color: $red;
 		}
 	}
+
 }
 
 .leDrawer-storyH {
@@ -131,7 +137,7 @@ $drawer-padding: 16px;
 // UI Style Overrides
 //
 
-.m-hero__slot.placeholder {
+.placeholder {
 	font-family: $font-admin;
 	font-size: 1.4rem !important;
 	line-height: 400%;
@@ -139,6 +145,14 @@ $drawer-padding: 16px;
 	text-align: center;
 	color: #aaa;
 	text-transform: uppercase;
+	box-shadow:	0 4px 0 rgba(255,255,255,.8) inset;
+}
+
+.m-hero__slot.placeholder {
+}
+
+.m-entry-slot.placeholder {
+	min-height: 250px;
 }
 
 
