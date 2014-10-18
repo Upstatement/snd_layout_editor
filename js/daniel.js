@@ -3,6 +3,8 @@ $(function() {
 
   var $vergeContent = $(".l-container");
 
+  $vergeContent.append($('<div class="the-farm" style="position:fixed;width:350px;top:0;left:0;background:white;border:red solid 1px;z-index:100;"></div>'));
+
   $("a").removeAttr("href",$vergeContent);
 
   var draggable_classes = ['.m-entry-slot','.m-hero__slot'];
@@ -58,20 +60,34 @@ $(function() {
     if (dragSrcEl != this) {
       // var foo = this.innerHTML;
       // console.log(foo);
-      this.innerHTML = dragSrcEl.innerHTML;
-      dragSrcEl.innerHTML = entry_slot_placeholder;
+      if ($(dragSrcEl).parent().hasClass("the-farm")) {
+        this.innerHTML = dragSrcEl.innerHTML;
+        $(dragSrcEl).remove();
+      } else {
+        if (!$(this).hasClass("placeholder")) {
+          $(".the-farm").append(makeDraggable($(this).clone()));
+        }
+        this.innerHTML = dragSrcEl.innerHTML;
+        $(this).toggleClass("placeholder", $(dragSrcEl).hasClass("placeholder"));
+        dragSrcEl.innerHTML = entry_slot_placeholder;
+        $(dragSrcEl).addClass("placeholder");
+      }
     }
 
     return false;
   }
 
-  draggable_classes.forEach(function(c) {
-    $(c,$vergeContent).attr("draggable","true")
+  function makeDraggable(node) {
+    return $(node).attr("draggable","true")
         .on('dragstart', handleDragStart)
         .on('dragenter', handleDragEnter)
         .on('dragover', handleDragOver)
         .on('dragleave', handleDragLeave)
         .on('drop', handleDrop);
+  }
+
+  draggable_classes.forEach(function(c) {
+    makeDraggable($(c,$vergeContent));
   })
 
 
