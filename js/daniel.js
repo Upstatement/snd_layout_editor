@@ -3,11 +3,11 @@ $(function() {
 
   var $vergeContent = $(".l-container");
 
-  $vergeContent.append($('<div class="the-farm" style=""></div>'));
+  // $vergeContent.append($('<div class="the-farm" style=""></div>'));
 
-  $vergeContent.append($('<style>\
-    .the-farm {-webkit-transition:left 0.3s;transition:left 0.3s;position:fixed;width:350px;max-height:100%;overflow:scroll;bottom:0;left:-200px;background:white;border:red solid 1px;z-index:1000;opacity:.9;}\
-   .the-farm:hover {left: 0;}</style>'));
+  // $vergeContent.append($('<style>\
+  //   .the-farm {-webkit-transition:left 0.3s;transition:left 0.3s;position:fixed;width:350px;max-height:100%;overflow:scroll;bottom:0;left:-200px;background:white;border:red solid 1px;z-index:99999999;opacity:.9;}\
+  //  .the-farm:hover {left: 0;}</style>'));
 
   $("a").removeAttr("href",$vergeContent);
 
@@ -61,22 +61,29 @@ $(function() {
       e.stopPropagation(); // Stops some browsers from redirecting.
     }
 
+    var $removedDrawer = $(".leDrawer-removed .leDrawer-storyList");
+
     // Don't do anything if dropping the same column we're dragging.
     if (dragSrcEl != this && !$(dragSrcEl).hasClass("placeholder")) {
       // var foo = this.innerHTML;
       // console.log(foo);
       if (!$(this).hasClass("placeholder")) {
-        $(".the-farm").append(makeDraggable($(this).clone()));
+        var $drawerItem = $('<li class="leDrawer-storyItem">'+this.innerHTML+'</li>');
+        $removedDrawer.append(makeDraggable($drawerItem));
       }
       this.innerHTML = dragSrcEl.innerHTML;
       $(this).toggleClass("placeholder", $(dragSrcEl).hasClass("placeholder"));
-      if ($(dragSrcEl).parent().hasClass("the-farm")) {
+      if ($(dragSrcEl).is('li')) {
         $(dragSrcEl).remove();
       } else {
         dragSrcEl.innerHTML = entry_slot_placeholder;
         $(dragSrcEl).addClass("placeholder");
       }
-      $(".the-farm").scrollTop($(".the-farm").prop("scrollHeight"));
+      // console.log($(".vox-lazy-load",$(this)));
+      $(".vox-lazy-load",$(this)).each(function() {
+        $(this).css("background-image","url("+$(this).data("original")+")");
+      });
+      // $(".the-farm").scrollTop($(".the-farm").prop("scrollHeight"));
     }
 
     return false;
