@@ -15,7 +15,7 @@ $drawer-padding: 16px;
 	background-color: $color-ui-bg;
 	box-shadow: 10px 0 0 rgba(0,0,0,.4);
 
-	transition: translate 0.1s ease;
+	transition: all 0.2s ease;
 	transform: translateX(-300px);
 }
 
@@ -40,7 +40,7 @@ $drawer-padding: 16px;
 	color: $color-ui-txt;
 	font-weight: $font-book;
 
-	transition: all 0.1s ease;
+	transition: all 0.2s ease-in;
 	@include placeholder-state(rgba(255,255,255,.4), rgba(255,255,255,.4), $color-ui-txt);
 
 }
@@ -98,7 +98,7 @@ $drawer-padding: 16px;
 	}
 
 	h3 {
-		transition: color 0.1s ease;
+		transition: color 0.2s ease-in;
 		&:hover {
 			color: $red;
 		}
