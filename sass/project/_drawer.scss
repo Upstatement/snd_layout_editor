@@ -1,4 +1,4 @@
-$drawer-padding: 20px;
+$drawer-padding: 16px;
 
 .leDrawer {
 	z-index: 5000001;
@@ -81,10 +81,33 @@ $drawer-padding: 20px;
 .leDrawer-storyItem {
 	padding: 6px 12px;
 	border-top: 1px solid rgba(255,255,255,.2);
+	&:hover {
+		cursor: pointer;
+	}
+}
+
+// Override Verge defaults
+.leDrawer-storyItem {
+	// Hide all but the headline
+	div, p, img {
+		display: none;
+	}
+
+	h1, h2, h3, h4, h5, h6 {
+		@extend .leDrawer-storyH;
+	}
+
+	h3 {
+		transition: color 0.1s ease;
+		&:hover {
+			color: $red;
+		}
+	}
 }
 
 .leDrawer-storyH {
-	font-weight: $font-semibold;
+	font: $font-semibold 13px $sans;
+	color: $color-ui-txt;
 }
 
 
@@ -94,12 +117,28 @@ $drawer-padding: 20px;
 
 .leDrawer-removed {
 	display: none;
-	@include absolute(n 0 0 0);
+	@include absolute(n $drawer-padding 0 $drawer-padding);
 	height: 200px;
 }
 
 .leDrawer-removed.is-open {
 	display: block;
+}
+
+
+
+//
+// UI Style Overrides
+//
+
+.m-hero__slot.placeholder {
+	font-family: $font-admin;
+	font-size: 1.4rem !important;
+	line-height: 400%;
+	background-color: #ededed;
+	text-align: center;
+	color: #aaa;
+	text-transform: uppercase;
 }
 
 
