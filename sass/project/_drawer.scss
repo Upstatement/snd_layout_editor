@@ -40,6 +40,13 @@ $drawer-width: 300px;
 	transform: translateX(0px);
 }
 
+.leDrawer-stories--storyList {
+	overflow-x: hidden;
+	overflow-y: scroll;
+	-webkit-overflow-scrolling: touch;
+}
+
+
 .leDrawer-toggleBtn {
 	@include absolute(10px -28px n n);
 	@include size(28px 33px);
@@ -105,7 +112,8 @@ $drawer-width: 300px;
 
 @mixin hide-defaults {
 	// Hide all but the headline
-	div, p, img {
+	div, p:not(.placeholder-txt), img, q,
+	.m-entry-slot__labels {
 		display: none;
 	}
 }
@@ -113,6 +121,9 @@ $drawer-width: 300px;
 // Override Verge defaults
 .leDrawer-storyItem {
 	@include hide-defaults;
+	.date {
+		display: none;
+	}
 
 	h1, h2, h3, h4, h5, h6 {
 		@extend .leDrawer-storyH;
@@ -135,15 +146,65 @@ $drawer-width: 300px;
 //
 
 .leDrawer-removed {
-	display: none;
-	@include absolute(n $drawer-padding 0 $drawer-padding);
+	@include absolute(n 0 -200px 0);
 	height: 200px;
+	background-color: #000;
+	transition: all .2s ease;
+
+	.leDrawer-storyList {
+		padding: 0 $drawer-padding;
+	}
 }
 
 .leDrawer-removed.isOpen {
-	display: block;
+	bottom: 0;
 }
 
+@include keyframes(colorChange) {
+	0% 	{ color: $red; }
+	100% { color: rgba(255,255,255,.85) }
+}
+
+ .leDrawer-removedH {
+ 	color: $red;
+	transition: color .2s ease;
+
+ 	.leDrawer-removed.isOpen & {
+ 		animation-delay: 3s;
+ 		animation-name: colorChange;
+		animation-duration: .2s;
+		animation-fill-mode: forwards;
+		animation-iteration-count: 1;
+ 	}
+ }
+
+ .leDrawer-removed--storyList {
+ 	height: 154px;
+	box-shadow: 0 -10px 0 rgba(0,0,0,.4) inset;
+	overflow-x: hidden;
+	overflow-y: scroll;
+	-webkit-overflow-scrolling: touch;
+}
+
+
+//
+// Live Editing
+//
+
+.liveEditing {
+	h1, h2, h3, h4, h5, h6 {
+		color: #fff !important;
+		background-color: rgb(0,0,0);
+		box-shadow:	10px 10px 0 rgb(0,0,0),
+						-10px -10px 0 rgb(0,0,0),
+						10px -10px 0 rgb(0,0,0),
+						-10px 10px 0 rgb(0,0,0);
+			&:hover {
+				color: #fff !important;
+				text-decoration: none !important;
+			}
+		}
+}
 
 
 //
@@ -178,22 +239,32 @@ $drawer-width: 300px;
 	min-height: 250px;
 }
 
-.m-entry-slot:not(.-entry-rock) {
-	transition: box-shadow 0s ease;
+li.placeholder {
+	background-color: #ededed;
+	min-height: 75px;
+}
+
+@mixin draggable-state($color: $green, $inset: true) {
+	@if $inset {
+		$inset: inset;
+	} @else {
+		$inset: "";
+	}
+
+	box-shadow:	4px 4px 0 #fff #{$inset},
+					-4px -4px 0 #fff #{$inset};
 	&:hover {
-		transition: box-shadow .3s ease;
-		box-shadow:	4px 4px 0 $green inset,
-						-4px -4px 0 $green inset;
+		box-shadow:	4px 4px 0 $green #{$inset},
+						-4px -4px 0 $green #{$inset};
 	}
 }
 
+.m-entry-slot:not(.-entry-rock):not(.-ad):not(.m-rock-newsletter) {
+	@include draggable-state;
+}
+
 .m-hero__slot {
-	transition: box-shadow 0s ease;
-	&:hover {
-		transition: box-shadow .3s ease;
-		box-shadow:	4px 4px 0 #000 inset,
-						-4px -4px 0 #000 inset;
-	}
+	@include draggable-state(#000);
 }
 
 .m-rock-read-this li {
@@ -216,6 +287,30 @@ $drawer-width: 300px;
 					14px 14px 0 $green,
 					-14px 14px 0 $green,
 					14px -14px 0 $green;
+	}
+}
+
+.m-entry-slot:not(.-entry-rock) {
+	.date {
+		visibility: hidden;
+		height: 8px;
+		display: block;
+	}
+}
+
+.m-entry-slot .m-rock-read-this {
+
+	h1, h2, h3, h4, h5, h6 {
+		font-family: $serif;
+		font-size: 16px;
+		font-weight: 400;
+		color: #000;
+		margin: 0;
+		line-height: 1.2;
+	}
+
+	.m-entry-slot__labels {
+		display: none;
 	}
 }
 

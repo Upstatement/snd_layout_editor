@@ -72,6 +72,9 @@ $(function() {
 
     var $removedDrawer = $(".leDrawer-removed .leDrawer-storyList");
 
+    // Once something goes into the drawer, give us a sign
+    $(".leDrawer-removed").removeClass("isOpen").addClass("isOpen");
+
     // Don't do anything if dropping the same column we're dragging.
     if (dragSrcEl != this && !$(dragSrcEl).hasClass("placeholder")) {
       // var foo = this.innerHTML;
@@ -117,11 +120,13 @@ $(function() {
 
   function noMoreEditable() {
     $('[contenteditable]').removeAttr('contenteditable');
+    $('[contenteditable]').removeClass('liveEditing');
   }
 
   function makeMeEditable() {
     noMoreEditable();
     $(this).attr('contenteditable',!$(this).hasClass("placeholder"));
+    $(this).addClass('liveEditing');
   }
 
   function heroTransform(node) {
@@ -139,7 +144,7 @@ $(function() {
       $drawer = $('.leDrawer');
 
   // $drawer.on('drop', handleDrop);
-  
+
   // Toggle Subnav Open/Closed
   $('.js-toggle-drawer').on('click', function(e) {
       e.preventDefault();
