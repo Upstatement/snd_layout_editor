@@ -36,7 +36,9 @@ $(function() {
 
     dragSrcEl = this;
 
-    $(this).css("background-color","white");
+    if (!$(this).is("li")) {
+      $(this).css("background-color","white");
+    }
 
 
     // e.dataTransfer.effectAllowed = 'move';
@@ -79,13 +81,16 @@ $(function() {
         $removedDrawer.append(makeDraggable($drawerItem));
       }
       this.innerHTML = dragSrcEl.innerHTML;
-      $(this).toggleClass("placeholder", $(dragSrcEl).hasClass("placeholder"));
+      // $(this).toggleClass("placeholder", $(dragSrcEl).hasClass("placeholder"));
       if ($(dragSrcEl).is('li')) {
         $(dragSrcEl).remove();
       } else {
         dragSrcEl.innerHTML = entry_slot_placeholder;
-        $(dragSrcEl).addClass("placeholder");
+        $(dragSrcEl).addClass("placeholder")
+                    .removeAttr("draggable");
       }
+      $(this).attr("draggable","true")
+             .removeClass("placeholder");
       // console.log($(".vox-lazy-load",$(this)));
       $(".vox-lazy-load",$(this)).each(function() {
         $(this).css("background-image","url("+$(this).data("original")+")");
@@ -113,7 +118,7 @@ $(function() {
 
   function makeMeEditable() {
     noMoreEditable();
-    $(this).attr('contenteditable','true');
+    $(this).attr('contenteditable',!$(this).hasClass("placeholder"));
   }
 
   draggable_classes.forEach(function(c) {
