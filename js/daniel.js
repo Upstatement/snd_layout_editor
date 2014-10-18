@@ -1,7 +1,7 @@
 $(function() {
   'use strict';
 
-  var $vergeContent = $(".l-container");
+  // var $vergeContent = $(".l-container");
 
   // $vergeContent.append($('<div class="the-farm" style=""></div>'));
 
@@ -9,9 +9,9 @@ $(function() {
   //   .the-farm {-webkit-transition:left 0.3s;transition:left 0.3s;position:fixed;width:350px;max-height:100%;overflow:scroll;bottom:0;left:-200px;background:white;border:red solid 1px;z-index:99999999;opacity:.9;}\
   //  .the-farm:hover {left: 0;}</style>'));
 
-  $("a").removeAttr("href",$vergeContent);
+  $("a").removeAttr("href");
 
-  var draggable_classes = ['.m-entry-slot','.m-hero__slot'];
+  var draggable_classes = ['.m-entry-slot','.m-hero__slot','.leDrawer-storyItem'];
 
   // var entry_slot_placeholder = '<ul class="m-entry-slot__labels"><li><a>TK TK</a></li></ul>\
   // <h3><a>Placeholder Hed</a></h3>\
@@ -32,7 +32,11 @@ $(function() {
     // Target (this) element is the source node.
     // this.style.opacity = '0.4';
 
+    noMoreEditable();
+
     dragSrcEl = this;
+
+    $(this).css("background-color","white");
 
 
     // e.dataTransfer.effectAllowed = 'move';
@@ -93,16 +97,28 @@ $(function() {
   }
 
   function makeDraggable(node) {
-    return $(node).attr("draggable","true")
+    return $(node)
+        .attr("draggable","true")
         .on('dragstart', handleDragStart)
         .on('dragenter', handleDragEnter)
         .on('dragover', handleDragOver)
         .on('dragleave', handleDragLeave)
-        .on('drop', handleDrop);
+        .on('drop', handleDrop)
+        .on('click', makeMeEditable);
+  }
+
+  function noMoreEditable() {
+    $('[contenteditable]').removeAttr('contenteditable');
+  }
+
+  function makeMeEditable() {
+    noMoreEditable();
+    $(this).attr('contenteditable','true');
   }
 
   draggable_classes.forEach(function(c) {
-    makeDraggable($(c,$vergeContent));
+    // $(c,$vergeContent).css("background-color","white");
+    makeDraggable($(c));
   })
 
 
