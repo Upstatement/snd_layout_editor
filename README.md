@@ -33,6 +33,17 @@ This tool allows an editor to dynamically arrange and edit a complex web layout 
 
 This also needs to hook into many disparate CMSes.
 
+### Challenges and questions
+- Could we change the templates dynamically?
+- Is democratizing homepage design to this degree dangerous?
+- Can we have presets and limits (e.g., only certain roles can move blocks)?
+- Is the preview responsive?
+- Would it make sense to apply to topic pages and/or article pages?
+- How can this fit into various CMS?
+
+### What still needs to happen
+Probably a lot!
+
 ## Development
 
 ### Install
