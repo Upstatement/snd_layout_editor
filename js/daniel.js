@@ -11,7 +11,7 @@ $(function() {
 
   $("a").removeAttr("href");
 
-  var draggable_classes = ['.m-entry-slot','.m-hero__slot','.leDrawer-storyItem'];
+  var draggable_classes = ['.m-entry-slot:not(.-entry-rock)','.m-rock-read-this li','.m-hero__slot','.leDrawer-storyItem'];
 
   // var entry_slot_placeholder = '<ul class="m-entry-slot__labels"><li><a>TK TK</a></li></ul>\
   // <h3><a>Placeholder Hed</a></h3>\
@@ -36,7 +36,7 @@ $(function() {
 
     dragSrcEl = this;
 
-    if (!$(this).is("li")) {
+    if (!$(this).hasClass("leDrawer-storyItem")) {
       $(this).css("background-color","white");
     }
 
@@ -85,7 +85,7 @@ $(function() {
         heroTransform($(this));
       }
       // $(this).toggleClass("placeholder", $(dragSrcEl).hasClass("placeholder"));
-      if ($(dragSrcEl).is('li')) {
+      if ($(dragSrcEl).hasClass("leDrawer-storyItem")) {
         $(dragSrcEl).remove();
       } else {
         dragSrcEl.innerHTML = entry_slot_placeholder;
@@ -138,7 +138,8 @@ $(function() {
   var $body = $('body'),
       $drawer = $('.leDrawer');
 
-
+  // $drawer.on('drop', handleDrop);
+  
   // Toggle Subnav Open/Closed
   $('.js-toggle-drawer').on('click', function(e) {
       e.preventDefault();
