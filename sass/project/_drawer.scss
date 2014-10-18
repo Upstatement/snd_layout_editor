@@ -4,7 +4,16 @@ $drawer-width: 300px;
 .l-container {
 	transition: all 0.2s ease;
 	.leDrawer-isOpen & {
-		transform: translateX(150px);
+		transform: translateX(300px);
+		@include mq(1055px) {
+			transform: translateX(25%);
+		}
+		@include mq(1200px) {
+			transform: translateX(20%);
+		}
+		@include mq(1345px) {
+			transform: translateX(150px);
+		}
 	}
 }
 
