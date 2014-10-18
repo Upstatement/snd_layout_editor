@@ -23,10 +23,10 @@ $white: #ffffff;
 $txt-black: #464646;
 $med-gray: #999999;
 $light-gray: #cccccc;
-$goldfinch: #E3B900;
-$blue: #2E73B8;
-$donate: #F46049;
-$attn-red: #d44314;
+
+$color-ui-bg: rgb(44,44,44);
+$color-ui-txt: rgb(180,180,180);
+$color-ui-txt-dark: rgb(100,100,100);
 
 
 // Type ------------------------------------
@@ -34,8 +34,8 @@ $attn-red: #d44314;
 $default-sans: Helvetica, Arial, sans-serif;
 $default-serif: Georgia, Times, serif;
 
-$sans: $default-sans;
-$serif: $default-serif;
+$sans: Adelle Sans, $default-sans;
+$serif: Adelle, $default-serif;
 
 $font-light: 		200;
 $font-book: 			400;
