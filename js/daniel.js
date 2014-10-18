@@ -24,7 +24,7 @@ $(function() {
   // <div class="m-entry-slot__blurb"><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam eleifend diam sit amet ante viverra vehicula. Sed in urna a est ornare feugiat sit amet et leo. Cras rutrum sagittis enim vel ultricies. Donec eget arcu eget tortor porttitor pharetra. Nullam et rhoncus urna, eu finibus nibh. Etiam sed tellus aliquet diam ultrices elementum. Vestibulum aliquam felis et enim accumsan, quis hendrerit lorem dictum.</p></div>\
   //   <q><a>PULLQUOTE TK</a></q>';
 
-  var entry_slot_placeholder = "Drag new item here";
+  var entry_slot_placeholder = "<p class='placeholder-txt'>Drag new item here</p>";
 
   var dragSrcEl = null;
 
