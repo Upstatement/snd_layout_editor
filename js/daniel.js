@@ -81,6 +81,9 @@ $(function() {
         $removedDrawer.append(makeDraggable($drawerItem));
       }
       this.innerHTML = dragSrcEl.innerHTML;
+      if ($(this).hasClass('m-hero__slot')) {
+        heroTransform($(this));
+      }
       // $(this).toggleClass("placeholder", $(dragSrcEl).hasClass("placeholder"));
       if ($(dragSrcEl).is('li')) {
         $(dragSrcEl).remove();
@@ -119,6 +122,12 @@ $(function() {
   function makeMeEditable() {
     noMoreEditable();
     $(this).attr('contenteditable',!$(this).hasClass("placeholder"));
+  }
+
+  function heroTransform(node) {
+    $('h3',$(node)).replaceWith(function() {
+      return $('<h2>'+this.innerHTML+'</h2>');
+    });
   }
 
   draggable_classes.forEach(function(c) {
