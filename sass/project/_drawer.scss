@@ -7,8 +7,11 @@
 
 	width: 300px;
 	padding: 20px;
+
+	font: $font-book 13px $sans;
 	color: $color-ui-txt;
 	background-color: $color-ui-bg;
+	box-shadow: 10px 0 0 rgba(0,0,0,.4);
 
 	transition: translate 0.1s ease;
 	transform: translateX(-300px);
@@ -19,16 +22,60 @@
 }
 
 .leDrawer-openCloseBtn {
-	@include absolute(20px 0 n n);
-
-	@include size(40px);
+	@include absolute(10px -28px n n);
+	@include size(28px 33px);
 	background-color: $color-ui-bg;
 	border-radius: 0 2px 2px 0;
 }
 
 .leDrawer-toolsSearch {
+	@include input-default;
 	width: 100%;
-	border-radius: 2px;
-	background-color: rgba(255,255,255,1);
-	color: $color-ui-txt-dark;
+	padding: 10px 10px 8px 16px;
+	margin-bottom: 20px;
+	border-radius: 20px;
+	background-color: rgba(255,255,255,.2);
+	color: $color-ui-txt;
+	font-weight: $font-book;
+
+	transition: all 0.1s ease;
+	@include placeholder-state(rgba(255,255,255,.4), rgba(255,255,255,.4), $color-ui-txt);
+
+}
+
+
+//
+// Tools
+//
+
+.leDrawer-tools {
+}
+
+.leDrawer-toolsStoryTypes {
+	@include input-default;
+	width: 100%;
+	background-color: #000;
+	color: rgba(255,255,255,.85);
+	font: $font-bold 12px $sans;
+	text-transform: uppercase;
+	letter-spacing: 2px;
+	padding: 16px 16px 15px;
+}
+
+//
+// Story List
+//
+
+.leDrawer-storyList {
+	margin: 0;
+	padding: 0;
+}
+
+.leDrawer-storyItem {
+	padding: 6px 12px;
+	border-top: 1px solid rgba(255,255,255,.2);
+}
+
+.leDrawer-storyH {
+	font-weight: $font-semibold;
 }
