@@ -36,7 +36,9 @@ $(function() {
 
     dragSrcEl = this;
 
-    $(this).css("background-color","white");
+    if (!$(this).is("li")) {
+      $(this).css("background-color","white");
+    }
 
 
     // e.dataTransfer.effectAllowed = 'move';
