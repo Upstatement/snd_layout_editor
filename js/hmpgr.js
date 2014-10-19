@@ -87,13 +87,15 @@ $(function() {
       if ($(this).hasClass('m-hero__slot')) {
         heroTransform($(this));
       }
-      // $(this).toggleClass("placeholder", $(dragSrcEl).hasClass("placeholder"));
-      if ($(dragSrcEl).hasClass("leDrawer-storyItem")) {
-        $(dragSrcEl).remove();
-      } else {
-        dragSrcEl.innerHTML = entry_slot_placeholder;
-        $(dragSrcEl).addClass("placeholder")
-                    .removeAttr("draggable");
+
+      if (!e.altKey) {
+        if ($(dragSrcEl).hasClass("leDrawer-storyItem")) {
+          $(dragSrcEl).remove();
+        } else {
+          dragSrcEl.innerHTML = entry_slot_placeholder;
+          $(dragSrcEl).addClass("placeholder")
+                      .removeAttr("draggable");
+        }
       }
       $(this).attr("draggable","true")
              .removeClass("placeholder");
