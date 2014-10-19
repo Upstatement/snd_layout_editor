@@ -79,11 +79,18 @@ $(function() {
     if (dragSrcEl != this && !$(dragSrcEl).hasClass("placeholder")) {
       // var foo = this.innerHTML;
       // console.log(foo);
-      if (!$(this).hasClass("placeholder")) {
-        var $drawerItem = $('<li class="leDrawer-storyItem">'+this.innerHTML+'</li>');
-        $removedDrawer.append(makeDraggable($drawerItem));
+
+      if ($(this).hasClass("leDrawer-storyList")) {
+        var $drawerItem = $('<li class="leDrawer-storyItem">'+dragSrcEl.innerHTML+'</li>');
+        $removedDrawer.prepend(makeDraggable($drawerItem));
+      } else {
+        if (!$(this).hasClass("placeholder")) {
+          var $drawerItem = $('<li class="leDrawer-storyItem">'+this.innerHTML+'</li>');
+          $removedDrawer.prepend(makeDraggable($drawerItem));
+        }
+        this.innerHTML = dragSrcEl.innerHTML;
       }
-      this.innerHTML = dragSrcEl.innerHTML;
+  
       if ($(this).hasClass('m-hero__slot')) {
         heroTransform($(this));
       }
@@ -145,7 +152,11 @@ $(function() {
   var $body = $('body'),
       $drawer = $('.leDrawer');
 
-  // $drawer.on('drop', handleDrop);
+  $(".leDrawer-removed .leDrawer-storyList")
+        .on('dragenter', handleDragEnter)
+        .on('dragover', handleDragOver)
+        .on('dragleave', handleDragLeave)
+        .on('drop', handleDrop);
 
   // Toggle Subnav Open/Closed
   $('.js-toggle-drawer').on('click', function(e) {
