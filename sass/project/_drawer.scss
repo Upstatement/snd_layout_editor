@@ -266,6 +266,7 @@ li.placeholder {
 
 .m-hero__slot {
 	@include draggable-state(#000);
+	.date,
 	.m-entry-slot__labels {
 		display: none;
 	}
@@ -319,6 +320,10 @@ li.placeholder {
 		line-height: 1.1;
 		margin: 0;
 		color: #000;
+	}
+
+	.p-dynamic-image {
+		margin-bottom: 12px;
 	}
 }
 
