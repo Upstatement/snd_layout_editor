@@ -10,6 +10,10 @@ $(function() {
   //  .the-farm:hover {left: 0;}</style>'));
 
   $("a").removeAttr("href");
+  $(".vox-lazy-load").each(function() {
+        $(this).css("background-image","url("+$(this).data("original")+")");
+      });
+
 
   var draggable_classes = ['.m-entry-slot:not(.-entry-rock)','.m-rock-read-this li','.m-hero__slot','.leDrawer-storyItem'];
 
