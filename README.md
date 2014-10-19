@@ -6,7 +6,7 @@ A seamless way to get a handle on your homepage.
 This is a demo that was built as part of SND Makes: Boston. (Read [notes from our brainstorming](https://github.com/Upstatement/snd_layout_editor/blob/master/brainstorming.md) to see how we got here.)
 
 ### The problem
-How might we make content creation fun and accessible to anyone in the newsroom? 
+How might we make content creation fun and accessible to anyone in the newsroom?
 
 
 How can we make managing complex page designs easier and more accessible in a visual way interface?
@@ -23,7 +23,7 @@ How can we make managing complex page designs easier and more accessible in a vi
 
 ### What is it?
 
-This tool allows an editor to dynamically arrange and edit a complex web layout (like a homepage). In theory, a user would be able to: 
+This tool allows an editor to dynamically arrange and edit a complex web layout (like a homepage). In theory, a user would be able to:
 
 - Drag and drop content into layout
 - Rearrange content within a layout
@@ -52,19 +52,26 @@ Probably a lot!
 
 ### Install
 
-1. Install ... `add commands here`
+1. Clone the repository from GitHub to your local machine
+2. Navigate to project folder
+2. In terminal, run `bower install` to pull dependencies
+3. In terminal, run `compass watch` to compile CSS
 
- 
+
 ### Build
 
-1. Run: `add commands here`
+To run locally ...
+
+1. Navigate to the project folder
+2. In terminal, run : `python -m SimpleHTTPServer`
+3. Open in your browser of choice at localhost:8000
 
 ### Testing
 
 There are some very basic tests in the `tests/` folder.  Run them like so: `add commands here`
 
 ### Browser support
-Add any limitations here.
+We only tested it in the latest version of Chrome. We think it would probably work in other A-grade browsers.
 
 
 ### License
@@ -82,4 +89,4 @@ To contribute your changes:
 4. Push the changes to your fork `git push origin my-branch`
 5. [Submit a pull request](https://help.github.com/articles/creating-a-pull-request) to the parent repo
 
-Additionally, you can create issues on this repo to suggest changes or improvements. 
+Additionally, you can create issues on this repo to suggest changes or improvements.
