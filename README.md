@@ -3,7 +3,7 @@
 
 A seamless way to get a handle on your homepage.
 
-This is a demo that was built as part of SND Makes: Boston. (Read [notes from our brainstorming](snd_layout_editor/brainstorming.md) to see how we got here.)
+This is a demo that was built as part of SND Makes: Boston. (Read [notes from our brainstorming](https://github.com/Upstatement/snd_layout_editor/blob/master/brainstorming.md) to see how we got here.)
 
 ### The problem
 How might we make content creation fun and accessible to anyone in the newsroom? 
