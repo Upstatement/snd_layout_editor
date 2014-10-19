@@ -41,6 +41,7 @@ $drawer-width: 300px;
 }
 
 .leDrawer-stories--storyList {
+	height: 850px;
 	overflow-x: hidden;
 	overflow-y: scroll;
 	-webkit-overflow-scrolling: touch;
@@ -265,10 +266,19 @@ li.placeholder {
 
 .m-hero__slot {
 	@include draggable-state(#000);
+	.m-entry-slot__labels {
+		display: none;
+	}
 }
 
 .m-rock-read-this li {
 	@include hide-defaults;
+	.p-comment-count {
+		display: none;
+	}
+	p.byline {
+		display: block;
+	}
 
 	&:hover {
 	box-shadow:	0 10px 0 #fff,
@@ -295,6 +305,20 @@ li.placeholder {
 		visibility: hidden;
 		height: 8px;
 		display: block;
+	}
+	.byline {
+		display: none;
+	}
+}
+
+.m-entry-slot {
+	h1, h2, h3, h4, h5, h6 {
+		font-family: $serif;
+		font-size: 1.5rem;
+		font-weight: 400;
+		line-height: 1.1;
+		margin: 0;
+		color: #000;
 	}
 }
 
