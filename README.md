@@ -44,6 +44,10 @@ This also needs to hook into many disparate CMSes.
 ### What still needs to happen
 Probably a lot!
 
+- Build a way to version homepages and rollback changes
+- Build functionality to schedule homepages/designs
+- TBD
+
 ## Development
 
 ### Install
