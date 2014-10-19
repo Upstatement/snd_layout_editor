@@ -53,12 +53,34 @@ $drawer-width: 300px;
 	@include size(28px 33px);
 	background-color: $color-ui-bg;
 	border-radius: 0 2px 2px 0;
+	&:after {
+		@include psuedo;
+		@include size(12px);
+		@include svg(hamburger);
+		position: relative;
+		top: 10px;
+		right: -6px;
+		opacity: .75;
+		transition: opacity .15s ease;
+	}
+	.leDrawer-isOpen &:after {
+		@include svg(close);
+		opacity: .35;
+	}
+	&:hover:after {
+		opacity: .9;
+		cursor: pointer;
+	}
+}
+
+.leDrawer-toolsSearchForm {
+	position: relative;
 }
 
 .leDrawer-toolsSearch {
 	@include input-default;
 	width: 100%;
-	padding: 10px 10px 8px 16px;
+	padding: 10px 25px 8px 16px;
 	margin-bottom: 20px;
 	border-radius: 20px;
 	background-color: rgba(255,255,255,.2);
@@ -67,7 +89,16 @@ $drawer-width: 300px;
 
 	transition: all 0.2s ease-in;
 	@include placeholder-state(rgba(255,255,255,.4), rgba(255,255,255,.4), $color-ui-txt);
+}
 
+.leDrawer-toolsSearchBtn {
+	@include absolute(10px 10px n n);
+	@include size(15px);
+	@include svg(search);
+	opacity: .5;
+	&:hover {
+		cursor: pointer;
+	}
 }
 
 .leDrawer-sectionH {
