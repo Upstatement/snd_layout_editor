@@ -9,7 +9,7 @@ $(function() {
   //   .the-farm {-webkit-transition:left 0.3s;transition:left 0.3s;position:fixed;width:350px;max-height:100%;overflow:scroll;bottom:0;left:-200px;background:white;border:red solid 1px;z-index:99999999;opacity:.9;}\
   //  .the-farm:hover {left: 0;}</style>'));
 
-  $("a").removeAttr("href");
+  $("a:not(.href)").removeAttr("href");
   $(".vox-lazy-load").each(function() {
         $(this).css("background-image","url("+$(this).data("original")+")");
       });
