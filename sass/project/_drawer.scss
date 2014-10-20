@@ -374,7 +374,35 @@ li.placeholder {
 	}
 }
 
+// Show our copy of Typekit Din
 
+.m-big-stories__main p,
+.m-new-articles__toggle,
+.m-new-articles__toggle strong,
+.m-new-articles__toggle em,
+.m-nav__menu,
+.m-video-hero__title-bar h2,
+.m-video-hero__more-videos,
+.m-rock-read-this .date,
+.m-entry-slot q,
+.m-rock-newsletter .m-rock-newsletter__header,
+.m-entry-slot .m-entry-slot__labels,
+.m-rock-newsletter .m-rock-newsletter__subhead,
+.m-rock-newsletter .m-rock-newsletter__form input[type=submit],
+.m-rock-newsletter .m-rock-newsletter__form-wide input[type=submit],
+.p-tabs ul li,
+.p-review-score,
+.p-comment-count,
+.p-tabs,
+.m-carousel.hero.stream .m-carousel__stream-header,
+.m-entry-section__more,
+.m-footer__search-col .m-footer__section-header,
+.m-footer__sections-col .m-footer__section-header,
+.m-footer__basics-col .m-footer__section-header,
+.m-footer__elsewhere-col .m-footer__section-header {
+	font-family: "din-condensed-web" !important;
+	font-weight: 400 !important;
+}
 
 
 

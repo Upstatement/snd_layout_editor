@@ -1,0 +1,89 @@
+.hmpgrIntro {
+	display: none;
+	.hmpgrIntro-isActive & {
+		display: block;
+	}
+}
+
+.hmpgrIntro {
+	z-index: 5000002;
+	position: fixed;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	background-color: rgba(0,0,0,.9);
+	color: #fff;
+	padding: 20px;
+	text-align: center;
+	transition: all 0.2s ease;
+
+	@include mq(600px) {
+		padding: 60px 20px;
+	}
+
+	a {
+		text-decoration: underline;
+		&:hover {
+			text-decoration: none;
+			cursor: pointer;
+		}
+	}
+}
+
+.hmpgrIntro-inner {
+	max-width: 700px;
+	margin: auto;
+}
+
+.hmpgrIntro-h1 {
+	font: italic 400 72px $din;
+	text-transform: uppercase;
+	letter-spacing: 1px;
+	margin: 20px 0;
+	line-height: 100%;
+}
+
+.hmpgrIntro-highlight {
+	color: $red;
+}
+
+.hmpgrIntro-h3 {
+	font: normal 400 36px $din;
+	text-transform: uppercase;
+	color: rgba(255,255,255,.5);
+	margin: 20px 0 40px;
+}
+
+
+.hmpgrIntro-txt {
+	font: normal 300 21px $sans;
+	line-height: 165%;
+	margin-bottom: 30px;
+}
+
+.hmpgrIntro-start {
+	padding: 10px;
+	background-color: $red;
+	width: 200px;
+	font: normal 400 18px $din;
+	text-transform: uppercase;
+	margin: 0 auto 90px;
+	&:hover {
+		cursor: pointer;
+	}
+}
+
+
+.hmpgrIntro-credits {
+	font: normal 300 16px $sans;
+	line-height: 165%;
+	color: #ccc;
+	margin: 0 auto 20px;
+	max-width: 500px;
+}
+
+
+
+
+

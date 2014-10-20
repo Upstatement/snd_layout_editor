@@ -78,7 +78,7 @@ $(function() {
         }
         this.innerHTML = dragSrcEl.innerHTML;
       }
-  
+
       if ($(this).hasClass('m-hero__slot')) {
         heroTransform($(this));
       }
@@ -160,6 +160,17 @@ $(function() {
       } else {
           $body.addClass('leDrawer-isOpen');
           $drawer.addClass('isOpen');
+      }
+  });
+
+  // Toggle Intro Screen
+  $('.js-dismissIntro').on('click', function(e) {
+      e.preventDefault();
+
+      if ($body.hasClass('hmpgrIntro-isActive')) {
+          $body.removeClass('hmpgrIntro-isActive');
+      } else {
+          $body.addClass('hmpgrIntro-isActive');
       }
   });
 
