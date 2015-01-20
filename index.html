@@ -34,74 +34,7 @@
 
 
 
-<script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"beacon-6.newrelic.com","errorBeacon":"bam.nr-data.net","licenseKey":"e425f33c7f","applicationID":"754272","transactionName":"IVtWTBAMDVlXQh9HABBTXWcKFgNqQlFXVBZNR1BXFQ==","queueTime":1,"applicationTime":462,"ttGuid":"","agentToken":null,"agent":"js-agent.newrelic.com/nr-476.min.js"}</script>
-<script type="text/javascript">window.NREUM||(NREUM={}),__nr_require=function(t,e,n){function r(n){if(!e[n]){var o=e[n]={exports:{}};t[n][0].call(o.exports,function(e){var o=t[n][1][e];return r(o?o:e)},o,o.exports)}return e[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<n.length;o++)r(n[o]);return r}({QJf3ax:[function(t,e){function n(t){function e(e,n,a){t&&t(e,n,a),a||(a={});for(var c=u(e),f=c.length,s=i(a,o,r),p=0;f>p;p++)c[p].apply(s,n);return s}function a(t,e){f[t]=u(t).concat(e)}function u(t){return f[t]||[]}function c(){return n(e)}var f={};return{on:a,emit:e,create:c,listeners:u,_events:f}}function r(){return{}}var o="nr@context",i=t("gos");e.exports=n()},{gos:"7eSDFh"}],ee:[function(t,e){e.exports=t("QJf3ax")},{}],gos:[function(t,e){e.exports=t("7eSDFh")},{}],"7eSDFh":[function(t,e){function n(t,e,n){if(r.call(t,e))return t[e];var o=n();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(t,e,{value:o,writable:!0,enumerable:!1}),o}catch(i){}return t[e]=o,o}var r=Object.prototype.hasOwnProperty;e.exports=n},{}],D5DuLP:[function(t,e){function n(t,e,n){return r.listeners(t).length?r.emit(t,e,n):(o[t]||(o[t]=[]),void o[t].push(e))}var r=t("ee").create(),o={};e.exports=n,n.ee=r,r.q=o},{ee:"QJf3ax"}],handle:[function(t,e){e.exports=t("D5DuLP")},{}],XL7HBI:[function(t,e){function n(t){var e=typeof t;return!t||"object"!==e&&"function"!==e?-1:t===window?0:i(t,o,function(){return r++})}var r=1,o="nr@id",i=t("gos");e.exports=n},{gos:"7eSDFh"}],id:[function(t,e){e.exports=t("XL7HBI")},{}],loader:[function(t,e){e.exports=t("G9z0Bl")},{}],G9z0Bl:[function(t,e){function n(){var t=l.info=NREUM.info;if(t&&t.agent&&t.licenseKey&&t.applicationID&&c&&c.body){l.proto="https"===p.split(":")[0]||t.sslForHttp?"https://":"http://",a("mark",["onload",i()]);var e=c.createElement("script");e.src=l.proto+t.agent,c.body.appendChild(e)}}function r(){"complete"===c.readyState&&o()}function o(){a("mark",["domContent",i()])}function i(){return(new Date).getTime()}var a=t("handle"),u=window,c=u.document,f="addEventListener",s="attachEvent",p=(""+location).split("?")[0],l=e.exports={offset:i(),origin:p,features:{}};c[f]?(c[f]("DOMContentLoaded",o,!1),u[f]("load",n,!1)):(c[s]("onreadystatechange",r),u[s]("onload",n)),a("mark",["firstbyte",i()])},{handle:"D5DuLP"}]},{},["G9z0Bl"]);</script>
-<script type="text/javascript">var _sf_startpt=(new Date()).getTime()</script>
-  <script class="kxct" data-id="JImcjrMY" data-timing="async" data-version="1.9" type="text/javascript">
-    window.Krux||((Krux=function(){Krux.q.push(arguments)}).q=[]);
-    (function(){
-      var k=document.createElement('script');k.type='text/javascript';k.async=true;
-      var m,src=(m=location.href.match(/\bkxsrc=([^&]+)/))&&decodeURIComponent(m[1]);
-      k.src = /^https?:\/\/([a-z0-9_\-\.]+\.)?krxd\.net(:\d{1,5})?\//i.test(src) ? src : src === "disable" ? "" :
-        (location.protocol==="https:"?"https:":"http:")+"//cdn.krxd.net/controltag?confid=JImcjrMY";
-      var s=document.getElementsByTagName('script')[0];s.parentNode.insertBefore(k,s);
-    })();
-  </script>
 
-  <script class="kxint" type="text/javascript">
-    window.Krux||((Krux=function(){Krux.q.push(arguments);}).q=[]);
-    (function(){
-      function retrieve(n){
-        var m, k='kx'+n;
-        if (window.localStorage) {
-          return window.localStorage[k] || "";
-        } else if (navigator.cookieEnabled) {
-          m = document.cookie.match(k+'=([^;]*)'); return (m && unescape(m[1])) || "";
-        } else {
-          return '';
-        }
-      }
-      Krux.user = retrieve('user');
-      Krux.segments = retrieve('segs') && retrieve('segs').split(',') || [];
-    })();
-  </script>
-
-<script type="text/javascript">
-window._umbel = window._umbel || [];
-(function() {
-var u = document.createElement('script'); u.type = 'text/javascript'; u.async = true;
-u.src = document.location.protocol + '//tags.api.umbel.com/lrjhazrpqbgtnrij/w.js';
-var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(u, s);
-var d = new Date();
-d.setDate(d.getDate() + 365);
-document.cookie = "umbel_api_key=lrjhazrpqbgtnrij; expires=" + d.toUTCString();
-if (document.location.href.indexOf('utm_source=umbel') !== -1) {
-if (typeof Chorus !== 'undefined' && typeof Chorus.Video !== 'undefined') {
-Chorus.Video.autoplay = true;
-jQuery(document).ready(function(){
-document.location.hash = jQuery('.chorus-video-embed').first().attr('id');
-});
-}
-}
-})();
-</script>
-
-
-
-<script type='text/javascript' src='http://storage.cloud.kargo.com/ad/network/tag/v3/_jLC5oqWXzw1IWgPvd2VE0b.js'></script>
-  <script>
-// Workaround for Windows Phone IE10 bug: http://mattstow.com/responsive-design-in-ie10-on-windows-phone-8.html
-// TODO: Remove this when Windows Phone 8.1 is released.
-(function() {
-  if ("-ms-user-select" in document.documentElement.style && navigator.userAgent.match(/IEMobile\/10\.0/)) {
-    var msViewportStyle = document.createElement("style");
-    msViewportStyle.appendChild(
-      document.createTextNode("@-ms-viewport{width:auto!important}")
-    );
-    document.getElementsByTagName("head")[0].appendChild(msViewportStyle);
-  }
-})();
-</script>
 <!--[if lte IE 8]>
   <script src="http://cdn3.vox-cdn.com/javascripts/ie8_head.v0b8ca27474a53e93.js" type="text&#x2F;javascript"></script>
 <![endif]-->
@@ -126,20 +59,20 @@ document.location.hash = jQuery('.chorus-video-embed').first().attr('id');
   }
 </script>
 
-<script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-<script type="text/javascript">window.jQuery || document.write('<script src="http://cdn3.vox-cdn.com/javascripts/vendor/jquery-1.10.2.min.vda41706.js"><\/script>');</script>
+<script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+<script type="text/javascript">window.jQuery || document.write('<script src="bower_components/jquery/dist/jquery.min.js"><\/script>');</script>
 
 <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/underscore.js/1.5.2/underscore-min.js"></script>
-<script type="text/javascript">window._ || document.write('<script src="http://cdn0.vox-cdn.com/javascripts/vendor/underscore-1.5.2.min.vd22f881.js"><\/script>');</script>
+<script type="text/javascript">window._ || document.write('<script src="bower_components/underscore/underscore-min.js"><\/script>');</script>
 
 <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/backbone.js/1.0.0/backbone-min.js"></script>
-<script type="text/javascript">window.Backbone || document.write('<script src="http://cdn3.vox-cdn.com/javascripts/vendor/backbone-1.0.0.min.v3541019.js"><\/script>');</script>
+<script type="text/javascript">window.Backbone || document.write('<script src="bower_components/backbone/backbone.js"><\/script>');</script>
 
 
 
-  <script src="http://cdn2.vox-cdn.com/javascripts/verge2_head.v29daaff5564b7700.js" type="text&#x2F;javascript"></script>
+  <script src="vox_components/js/verge2_head.v273691580952c79d.js" type="text&#x2F;javascript"></script>
 
-<script src="http://cdn3.vox-cdn.com/javascripts/lib/advertisement.v6fdc11c.js" type="text&#x2F;javascript"></script>
+<script src="https://cdn3.vox-cdn.com/javascripts/lib/advertisement.v6fdc11c.js" type="text&#x2F;javascript"></script>
 
 <script type="text/javascript" src="//fonts.voxmedia.com/wvq7oai.js"></script>
 <link href='http://fonts.googleapis.com/css?family=Pathway+Gothic+One' rel='stylesheet' type='text/css'>
@@ -147,10 +80,11 @@ document.location.hash = jQuery('.chorus-video-embed').first().attr('id');
 <script>try{Typekit.load();}catch(e){}</script>
 
   <link href="css/style.css" media="screen" rel="stylesheet" type="text&#x2F;css" />
-  <link href="http://cdn1.vox-cdn.com/stylesheets/vox_universal.va4f894adf58cf9b5.css" media="all" rel="stylesheet" type="text&#x2F;css" />
-  <link href="http://cdn0.vox-cdn.com/stylesheets/verge2_a.v5501d963e26792a2.css" media="screen" rel="stylesheet" type="text&#x2F;css" />
-  <link href="http://cdn2.vox-cdn.com/stylesheets/verge2_b.v0689289da3290ac8.css" media="screen" rel="stylesheet" type="text&#x2F;css" />
-  <link href="http://cdn0.vox-cdn.com/stylesheets/verge2_c.v994bbad1ba547d87.css" media="screen" rel="stylesheet" type="text&#x2F;css" />
+  <link href="vox_components/css/vox_universal.v2b0dd29739b6f016.css" media="all" rel="stylesheet" type="text&#x2F;css" />
+  <link href="vox_components/css/verge2_a.v07ff5886a1551b4f.css" media="all" rel="stylesheet" type="text&#x2F;css" />
+  <link href="vox_components/css/verge2_b.v168e0f5f5279f049.css" media="all" rel="stylesheet" type="text&#x2F;css" />
+  <link href="vox_components/css/verge2_c.v74455c90ebe790f6.css" media="all" rel="stylesheet" type="text&#x2F;css" />
+  <link href="vox_components/css/verge2_print.v3b995edbf325f234.css" media="print" rel="stylesheet" type="text&#x2F;css" />
 
   <!--[if lte IE 8]>
     <link href="http://cdn1.vox-cdn.com/stylesheets/verge2_ie8_hacks.ve39ec87120dfb5f8.css" media="screen" rel="stylesheet" type="text&#x2F;css" />
@@ -5080,8 +5014,8 @@ content: none;
   }
 </script>
 
-    <script src="http://cdn3.vox-cdn.com/javascripts/verge2_body.v9d8a564520347e6b.js" type="text&#x2F;javascript"></script>
-<script type="text/javascript" src="//s.skimresources.com/js/66960X1514734.skimlinks.js"></script>
+    <script src="vox_components/js/verge2_body.v7e2847202582a5c7.js" type="text&#x2F;javascript"></script>
+<script type="text/javascript" src="vox_components/js/skimlinks.js"></script>
 <!--[if lte IE 8]>
   <script src="http://cdn0.vox-cdn.com/javascripts/ie8_body.v6803f2cf42fb922c.js" type="text&#x2F;javascript"></script>
 <![endif]-->
@@ -5096,26 +5030,7 @@ content: none;
               SBN.Ads.showAd("reskin");
             </script>
           </div>
-  <script>
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 
-  ga('create', 'UA-26533115-1', 'auto');
-
-    ga('set', 'dimension1', 'Verge Hub Page');
-
-
-  ga('set', 'dimension3', 'Logged Out');
-
-
-  ga('set', 'dimension6', typeof adblockJsFile === 'undefined' ? 'Adblock' : 'No Adblock');
-
-  ga('set', 'dimension7', Chorus.Environment.currentBreakpoint().name);
-
-  ga('send', 'pageview');
-</script>
 
 <script type="text/javascript">
 if (Math.random() <= 0.0005 ){
@@ -5154,24 +5069,6 @@ alt="Quantcast"/></a>
 <!-- End Quantcast tag -->
 
 
-  <script type="text/javascript">
-  var _sf_async_config={uid:2724,domain:"theverge.com"};
-  (function(){
-    function loadChartbeat() {
-      window._sf_endpt=(new Date()).getTime();
-      var e = document.createElement('script');
-      e.setAttribute('language', 'javascript');
-      e.setAttribute('type', 'text/javascript');
-      e.setAttribute('src',
-         (("https:" == document.location.protocol) ? "https://a248.e.akamai.net/chartbeat.download.akamai.com/102508/" : "http://static.chartbeat.com/") +
-         "js/chartbeat_pub.js");
-      document.body.appendChild(e);
-    }
-    var oldonload = window.onload;
-    window.onload = (typeof window.onload != 'function') ?
-       loadChartbeat : function() { oldonload(); loadChartbeat(); };
-  })();
-  </script>
   <img src="http://aperture.displaymarketplace.com/audmeasure.gif?liveconclientID=5497559777280&PageID=650423876&EventType=view" style="width:1px; height: 1px; visibility:hidden" />
   <script type="text&#x2F;javascript">
 //<![CDATA[

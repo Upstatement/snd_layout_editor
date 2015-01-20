@@ -1,5 +1,5 @@
 bower_components/
 .sass-cache
 .DS_Store
-css/
+css/style.css
 *.sublime*
